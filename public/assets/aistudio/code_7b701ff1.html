@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SSS Ice Cream &amp; Snacks | Artisanal Confectionery &amp; Delights</title>
+<!-- Material Symbols Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Playfair Display & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind CSS Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "choco": "#35170F",
+            "choco-dark": "#261914",
+            "amber-brand": "#F47721",
+            "cream": "#FFF7E9",
+            "cream-card": "#FFFBF2",
+            "cream-border": "#EEDDC5",
+            "pistachio": "#238A55"
+          },
+          fontFamily: {
+            "headline": ["Playfair Display", "serif"],
+            "body": ["Inter", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Explicit Product Image Aspect Ratio & Fit */
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      position: relative;
+      border-radius: 12px;
+      background: #FFF7E9;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    .card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(53, 23, 15, 0.06), 0 2px 6px -1px rgba(53, 23, 15, 0.04);
+    }
+    .card-shadow-hover:hover {
+      box-shadow: 0 14px 34px -4px rgba(53, 23, 15, 0.14), 0 4px 12px -2px rgba(53, 23, 15, 0.06);
+    }
+</style>
+</head>
+<body class="bg-cream text-choco-dark font-body antialiased selection:bg-amber-brand selection:text-white">
+<!-- TOP STICKY NAVBAR -->
+<header class="docked full-width top-0 sticky z-50 bg-[#FFF7E9]/95 backdrop-blur-md border-b border-cream-border/60 shadow-xs transition-all duration-200">
+<div class="flex justify-between items-center w-full px-4 sm:px-8 md:px-12 max-w-7xl mx-auto h-20">
+<!-- Brand Name / Logo -->
+<a class="flex items-center gap-3 active:scale-95 transition-transform" href="#home">
+<div class="w-11 h-11 rounded-xl bg-choco text-amber-brand flex items-center justify-center font-headline text-2xl font-bold shadow-sm">
+        S
+      </div>
+<div>
+<span class="font-headline font-bold text-lg md:text-xl text-choco tracking-tight block leading-tight">SSS Ice Cream &amp; Snacks</span>
+<span class="text-[11px] font-semibold tracking-wider text-amber-brand uppercase">Artisanal Parlour</span>
+</div>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-choco/80">
+<a class="hover:text-amber-brand transition-colors text-amber-brand" href="#home">Home</a>
+<a class="hover:text-amber-brand transition-colors" href="#best-sellers">Best Sellers</a>
+<a class="hover:text-amber-brand transition-colors" href="#menu">Menu</a>
+<a class="hover:text-amber-brand transition-colors" href="#about">About</a>
+<a class="hover:text-amber-brand transition-colors" href="#why-us">Why Us</a>
+<a class="hover:text-amber-brand transition-colors" href="#gallery">Gallery</a>
+<a class="hover:text-amber-brand transition-colors" href="#contact">Contact</a>
+</nav>
+<!-- Header Actions -->
+<div class="flex items-center gap-3">
+<!-- WhatsApp Hotline Link -->
+<a class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-cream-border text-xs font-bold text-choco hover:text-amber-brand transition-colors shadow-xs" href="https://wa.me/923218822161" target="_blank">
+<span class="material-symbols-outlined text-green-600 text-base material-symbols-fill">chat</span>
+<span>+92 321 8822161</span>
+</a>
+<!-- Shopping Cart Drawer Trigger Button -->
+<button aria-label="View Shopping Cart" class="relative p-2.5 rounded-xl bg-white border border-cream-border text-choco hover:bg-amber-brand hover:text-white transition-all shadow-xs flex items-center justify-center" onclick="toggleCartDrawer(true)">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+<span class="absolute -top-1.5 -right-1.5 bg-amber-brand text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white" id="cartCountBadge">0</span>
+</button>
+<!-- Direct Quick Order CTA -->
+<a class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-choco text-white text-xs font-bold hover:bg-amber-brand transition-colors shadow-sm" href="https://wa.me/923218822161?text=Assalam-o-Alaikum!%20I%20would%20like%20to%20order%20from%20SSS%20Ice%20Cream%20%26%20Snacks." target="_blank">
+<span>Order Now</span>
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- HERO SECTION (Authentic Storefront Background Image) -->
+<section class="relative overflow-hidden py-4 sm:py-6 md:py-8" id="home">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+<div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-cream-border/80 min-h-[580px] md:min-h-[640px] flex items-center">
+<!-- Authentic Storefront Image from Snapshot -->
+<img alt="SSS Ice Cream &amp; Snacks Storefront" class="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7kcSPB14inORl9E8HeBEovtMdtYdq85XDe4-197v0lVhMEp0PyxTOxjDr757ZsFIy4YRurFwQ54S6-lp6cDIzqCQBYQRp-a3llB-7WMOze61l6a3xCyvfse4E22MlqEEzHJAzIi6tR8a2iIbu7fQ-S7UBF-S6sl_dz8cGpAkW2d64o3QHodMIcfzYt6U56wR4DLsz3oNQzJmVebv-3yyPAhg7xuwaerHAVjwzmajfnm_d3jehBl0"/>
+<!-- Contrast Gradients for Guaranteed Readability -->
+<div class="absolute inset-0 bg-gradient-to-r from-choco/95 via-choco/80 to-choco/30 md:via-choco/75 md:to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-choco/90 via-transparent to-choco/40 pointer-events-none"></div>
+<!-- Hero Content -->
+<div class="relative z-10 p-6 sm:p-10 md:p-14 max-w-2xl lg:max-w-3xl space-y-6 text-white">
+<!-- Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-brand/20 border border-amber-brand/40 text-amber-brand text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-amber-brand animate-pulse"></span>
+          Freshly Churned Daily • Artisanal Parlour
+        </div>
+<!-- Headline -->
+<h1 class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-tight">
+          Your Sweet Moments Start Here.
+        </h1>
+<!-- Subheading -->
+<p class="text-base sm:text-lg text-cream/90 font-normal leading-relaxed max-w-xl">
+          Discover delicious ice cream, refreshing slush, crispy waffles, creamy shakes and more.
+        </p>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="px-7 py-3.5 rounded-xl bg-amber-brand text-white text-sm font-bold hover:bg-[#d86111] transition-all duration-200 active:scale-95 shadow-lg flex items-center gap-2" href="#menu">
+<span>Explore Our Menu</span>
+<span class="material-symbols-outlined text-base">arrow_downward</span>
+</a>
+<a class="px-7 py-3.5 rounded-xl bg-white/95 backdrop-blur-md text-choco text-sm font-bold hover:bg-white transition-all duration-200 active:scale-95 shadow-md flex items-center gap-2" href="https://wa.me/923218822161" target="_blank">
+<span class="material-symbols-outlined text-green-600 text-base material-symbols-fill">chat</span>
+<span>Order on WhatsApp</span>
+</a>
+</div>
+<!-- Value Proposition Badges -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/20">
+<div class="flex items-center gap-2 p-2.5 rounded-xl bg-choco/40 backdrop-blur-md border border-white/10">
+<span class="material-symbols-outlined text-pistachio text-base material-symbols-fill">verified</span>
+<span class="text-xs text-cream font-semibold">100% Pure Milk &amp; Cream</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-xl bg-choco/40 backdrop-blur-md border border-white/10">
+<span class="material-symbols-outlined text-amber-brand text-base material-symbols-fill">ac_unit</span>
+<span class="text-xs text-cream font-semibold">14 Slush Flavours</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-xl bg-choco/40 backdrop-blur-md border border-white/10">
+<span class="material-symbols-outlined text-amber-brand text-base material-symbols-fill">bakery_dining</span>
+<span class="text-xs text-cream font-semibold">Artisanal Waffles</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-xl bg-choco/40 backdrop-blur-md border border-white/10">
+<span class="material-symbols-outlined text-cream text-base material-symbols-fill">schedule</span>
+<span class="text-xs text-cream font-semibold">Open 1:00 PM – 1:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BEST-SELLING PRODUCTS (Signature Highlights) -->
+<section class="py-16 bg-cream border-y border-cream-border/60" id="best-sellers">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-amber-brand text-xs font-bold uppercase tracking-wider">Parlour Highlights</span>
+<h2 class="font-headline text-3xl md:text-4xl text-choco font-bold mt-1">Our Signature Creations</h2>
+<p class="text-sm md:text-base text-choco/75 mt-2">Beloved dessert crafts prepared fresh to order with rich dairy cream, roasted crunch, and artisanal syrups.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- 1. SSS Special Ice Cream -->
+<div class="product-card bg-white rounded-2xl p-4 md:p-5 border border-cream-border card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="product-image mb-4">
+<img alt="SSS Special Ice Cream" src="https://lh3.googleusercontent.com/aida/AEtjO1XH-M9OaeOsuZm4tQUKMFiAP0KU__K6Qyyyr0TgbhZuBjOop9DaPll54UJ7RXdNyuvwczdHxkZiFYufqpwmyaiNaqSUtevkODnDCUVaACz7H8PbQAIskgAacCUmsOHlKlLZPuB9OEYw0EWZeFtzME0riEN8WT_FtFsz9C9e7oPAqh0rhRQIxwctAn9k6JNqMaJwEt6vxIqr8AxpkAQ8MZyfs08hScO7-kHaxPXm6IU"/>
+<span class="absolute top-2.5 left-2.5 bg-amber-brand text-white text-[11px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide">Signature</span>
+</div>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline text-lg font-bold text-choco">SSS Special Ice Cream</h3>
+<span class="font-headline text-lg text-amber-brand font-bold whitespace-nowrap">Rs. 350</span>
+</div>
+<p class="text-xs text-choco/70 mt-2 leading-relaxed">
+            Our crown jewel: triple handcrafted scoops loaded with cashew pralines, roasted peanuts, and house drizzle.
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-cream-border flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-choco text-choco text-xs font-bold hover:bg-cream transition-colors flex items-center gap-1" onclick="addToCart('SSS Special Ice Cream', 350, 'https://lh3.googleusercontent.com/aida/AEtjO1XH-M9OaeOsuZm4tQUKMFiAP0KU__K6Qyyyr0TgbhZuBjOop9DaPll54UJ7RXdNyuvwczdHxkZiFYufqpwmyaiNaqSUtevkODnDCUVaACz7H8PbQAIskgAacCUmsOHlKlLZPuB9OEYw0EWZeFtzME0riEN8WT_FtFsz9C9e7oPAqh0rhRQIxwctAn9k6JNqMaJwEt6vxIqr8AxpkAQ8MZyfs08hScO7-kHaxPXm6IU')">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+<button class="px-3.5 py-1.5 bg-choco text-white rounded-lg text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1" onclick="orderSingleDirectWhatsApp('SSS Special Ice Cream', 350)">
+<span>Order</span>
+<span class="material-symbols-outlined text-sm">chat</span>
+</button>
+</div>
+</div>
+<!-- 2. Oreo Shake -->
+<div class="product-card bg-white rounded-2xl p-4 md:p-5 border border-cream-border card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="product-image mb-4">
+<img alt="Oreo Shake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXt0SuYbJ0CLNsMEKZAY5i9xEIp_8xKvWqX4Dw1RyXutGxB6XfqgIFzEl0M1Az3oroKyBxGuN2y-wgH1cJtJZ6r7MOiBgL-dPelPApmTwiQS339PvwXIOisZt0wP9_LVZXRNX8X-jybrxs8csESb7ZlUee-ZAuyrtbDUNW0F2TNaES3NfE1OwTPSe0AIRystUotQPSkGQwR1Eatuj3Njfn53iSFuDNBFq5oLOY4Po"/>
+<span class="absolute top-2.5 left-2.5 bg-choco text-white text-[11px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide">Best Seller</span>
+</div>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline text-lg font-bold text-choco">Oreo Shake</h3>
+<span class="font-headline text-lg text-amber-brand font-bold whitespace-nowrap">Rs. 380</span>
+</div>
+<p class="text-xs text-choco/70 mt-2 leading-relaxed">
+            Ultra-thick churned shake blended with crunchy Oreo cookies, pure whole cream, and chocolate lace.
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-cream-border flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-choco text-choco text-xs font-bold hover:bg-cream transition-colors flex items-center gap-1" onclick="addToCart('Oreo Shake', 380, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCXt0SuYbJ0CLNsMEKZAY5i9xEIp_8xKvWqX4Dw1RyXutGxB6XfqgIFzEl0M1Az3oroKyBxGuN2y-wgH1cJtJZ6r7MOiBgL-dPelPApmTwiQS339PvwXIOisZt0wP9_LVZXRNX8X-jybrxs8csESb7ZlUee-ZAuyrtbDUNW0F2TNaES3NfE1OwTPSe0AIRystUotQPSkGQwR1Eatuj3Njfn53iSFuDNBFq5oLOY4Po')">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+<button class="px-3.5 py-1.5 bg-choco text-white rounded-lg text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1" onclick="orderSingleDirectWhatsApp('Oreo Shake', 380)">
+<span>Order</span>
+<span class="material-symbols-outlined text-sm">chat</span>
+</button>
+</div>
+</div>
+<!-- 3. Special Waffle Cone -->
+<div class="product-card bg-white rounded-2xl p-4 md:p-5 border border-cream-border card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="product-image mb-4">
+<img alt="Special Waffle Cone" src="https://lh3.googleusercontent.com/aida/AEtjO1Wcgw2HTSHqzzCFpG6DPJARxAJdwtS8FpznEqtfbjYhkQn7z0RXUnRUo0MDuPM_IZGPNPSlqFMJJdtcKiz0B_LDX3jUh9ffGhuLlnTIR229kokrOkniCC_fMNN9gTw_zGPd3kMPiw1MVp7k9r8KQXWXBD9TQEuokOnxvXzwkx35BYh3-quWp_MzkIZBxlB_IGDjkR5YYyjKkaTXBst9UBFTB0zr8nsark0GJU2bsF2R"/>
+<span class="absolute top-2.5 left-2.5 bg-pistachio text-white text-[11px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide">Freshly Baked</span>
+</div>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline text-lg font-bold text-choco">Special Waffle Cone with Crunch</h3>
+<span class="font-headline text-lg text-amber-brand font-bold whitespace-nowrap">Rs. 200</span>
+</div>
+<p class="text-xs text-choco/70 mt-2 leading-relaxed">
+            Crisp waffle cone pressed on-site dipped in chocolate, rolled with roasted peanuts and filled with dairy gelato.
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-cream-border flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-choco text-choco text-xs font-bold hover:bg-cream transition-colors flex items-center gap-1" onclick="addToCart('Special Waffle Cone with Crunch &amp; Peanuts', 200, 'https://lh3.googleusercontent.com/aida/AEtjO1Wcgw2HTSHqzzCFpG6DPJARxAJdwtS8FpznEqtfbjYhkQn7z0RXUnRUo0MDuPM_IZGPNPSlqFMJJdtcKiz0B_LDX3jUh9ffGhuLlnTIR229kokrOkniCC_fMNN9gTw_zGPd3kMPiw1MVp7k9r8KQXWXBD9TQEuokOnxvXzwkx35BYh3-quWp_MzkIZBxlB_IGDjkR5YYyjKkaTXBst9UBFTB0zr8nsark0GJU2bsF2R')">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+<button class="px-3.5 py-1.5 bg-choco text-white rounded-lg text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1" onclick="orderSingleDirectWhatsApp('Special Waffle Cone with Crunch &amp; Peanuts', 200)">
+<span>Order</span>
+<span class="material-symbols-outlined text-sm">chat</span>
+</button>
+</div>
+</div>
+<!-- 4. Cold Coffee SSS Special -->
+<div class="product-card bg-white rounded-2xl p-4 md:p-5 border border-cream-border card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="product-image mb-4">
+<img alt="Cold Coffee SSS Special" src="https://lh3.googleusercontent.com/aida/AEtjO1VDT6kvb-RqV9oT-6Q5V4S0d7thlC2K986vziZdo7Dmf3F97Vt421dQ6r91xVrcZIo1P9pWvTK0wFxntBDOIjFY3C8RHNMM_1FwSAETEuqWfWOY6-c-cUWG9NI-fSfzONe8hOsrUK5Op7NFAIVhDfLxKblebLuRz4tZ9iwHIenA7QER9M04oDChSiC-fE95X5Rws0VuTIPppSgn71--yfZOPdNho5YTJYBKgeJ5lze6"/>
+<span class="absolute top-2.5 left-2.5 bg-amber-brand text-white text-[11px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide">Chilled Brew</span>
+</div>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline text-lg font-bold text-choco">Cold Coffee SSS Special</h3>
+<span class="font-headline text-lg text-amber-brand font-bold whitespace-nowrap">Rs. 400</span>
+</div>
+<p class="text-xs text-choco/70 mt-2 leading-relaxed">
+            Double scoop artisanal float, thick caramel swirl, whipped cream and roasted peanut crunch topping.
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-cream-border flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-choco text-choco text-xs font-bold hover:bg-cream transition-colors flex items-center gap-1" onclick="addToCart('Cold Coffee SSS Special with Crunch &amp; Peanuts', 400, 'https://lh3.googleusercontent.com/aida/AEtjO1VDT6kvb-RqV9oT-6Q5V4S0d7thlC2K986vziZdo7Dmf3F97Vt421dQ6r91xVrcZIo1P9pWvTK0wFxntBDOIjFY3C8RHNMM_1FwSAETEuqWfWOY6-c-cUWG9NI-fSfzONe8hOsrUK5Op7NFAIVhDfLxKblebLuRz4tZ9iwHIenA7QER9M04oDChSiC-fE95X5Rws0VuTIPppSgn71--yfZOPdNho5YTJYBKgeJ5lze6')">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+<button class="px-3.5 py-1.5 bg-choco text-white rounded-lg text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1" onclick="orderSingleDirectWhatsApp('Cold Coffee SSS Special with Crunch &amp; Peanuts', 400)">
+<span>Order</span>
+<span class="material-symbols-outlined text-sm">chat</span>
+</button>
+</div>
+</div>
+<!-- 5. Brownie with Ice Cream -->
+<div class="product-card bg-white rounded-2xl p-4 md:p-5 border border-cream-border card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="product-image mb-4">
+<img alt="Brownie with Ice Cream" src="https://lh3.googleusercontent.com/aida/AEtjO1WnI2IfK5b7eeXVHFLgWmDyItGomoO55Pye-WjQ-kL11aYk134Z-vY9VcTjQOTH15gTJSrqHWkcXdccew8bfU685RULONOBR-WLWDRPsWfsILGopC9mCaN4Emr8VbdaGwXXdPq2VQmoQ_RVZbdA1uWfRSEKyRadWzW9QsDyrOCqwSsyPqsX3l0BlByyb96lX3I8MQw2-_-YN1bzqN6pFP0m7P6KPizwr6aaDrwraeLv"/>
+<span class="absolute top-2.5 left-2.5 bg-choco text-white text-[11px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide">Warm &amp; Cold</span>
+</div>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline text-lg font-bold text-choco">Brownie with Ice Cream</h3>
+<span class="font-headline text-lg text-amber-brand font-bold whitespace-nowrap">Rs. 350</span>
+</div>
+<p class="text-xs text-choco/70 mt-2 leading-relaxed">
+            Warm gooey dark chocolate brownie served with a melting scoop of pure Madagascar vanilla cream and hot fudge.
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-cream-border flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-choco text-choco text-xs font-bold hover:bg-cream transition-colors flex items-center gap-1" onclick="addToCart('Brownie with Ice Cream', 350, 'https://lh3.googleusercontent.com/aida/AEtjO1WnI2IfK5b7eeXVHFLgWmDyItGomoO55Pye-WjQ-kL11aYk134Z-vY9VcTjQOTH15gTJSrqHWkcXdccew8bfU685RULONOBR-WLWDRPsWfsILGopC9mCaN4Emr8VbdaGwXXdPq2VQmoQ_RVZbdA1uWfRSEKyRadWzW9QsDyrOCqwSsyPqsX3l0BlByyb96lX3I8MQw2-_-YN1bzqN6pFP0m7P6KPizwr6aaDrwraeLv')">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+<button class="px-3.5 py-1.5 bg-choco text-white rounded-lg text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1" onclick="orderSingleDirectWhatsApp('Brownie with Ice Cream', 350)">
+<span>Order</span>
+<span class="material-symbols-outlined text-sm">chat</span>
+</button>
+</div>
+</div>
+<!-- 6. 14 Slush Flavours -->
+<div class="product-card bg-white rounded-2xl p-4 md:p-5 border border-cream-border card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="product-image mb-4">
+<img alt="14 Slush Flavours" src="https://lh3.googleusercontent.com/aida/AEtjO1UUfzuFedqtzMDrAIoIfQqxnWucFw-MmeH_lybphbhWOeh-BsoXbOekKDbwh_H5q_hNVSuOU_c6qoC0NvRF_TC-byKox8Nlo32pjg_Q4Qq0O58dJC2XEUetzwEuJLkBDzXhBBxLWIYL9S2Vo7UYjABOuHgMYR1i-Ii5o-ixFVjM6hLL2ivIgJXbrkApNQ3sqEbd6zXzBPAhdTp_dRHk5agTwes-LIVEBMNDjyyhk60"/>
+<span class="absolute top-2.5 left-2.5 bg-amber-brand text-white text-[11px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide">Sub-Zero</span>
+</div>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline text-lg font-bold text-choco">Sub-Zero Icy Slush</h3>
+<span class="font-headline text-lg text-amber-brand font-bold whitespace-nowrap">Rs. 180</span>
+</div>
+<p class="text-xs text-choco/70 mt-2 leading-relaxed">
+            14 vibrant refreshing fruit flavours including Mango, Peach, Tamarind (Imli), Blue Berry, Lychee, and Black Currant.
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-cream-border flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-choco text-choco text-xs font-bold hover:bg-cream transition-colors flex items-center gap-1" onclick="addToCart('Slush – 14 Flavours', 180, 'https://lh3.googleusercontent.com/aida/AEtjO1UUfzuFedqtzMDrAIoIfQqxnWucFw-MmeH_lybphbhWOeh-BsoXbOekKDbwh_H5q_hNVSuOU_c6qoC0NvRF_TC-byKox8Nlo32pjg_Q4Qq0O58dJC2XEUetzwEuJLkBDzXhBBxLWIYL9S2Vo7UYjABOuHgMYR1i-Ii5o-ixFVjM6hLL2ivIgJXbrkApNQ3sqEbd6zXzBPAhdTp_dRHk5agTwes-LIVEBMNDjyyhk60')">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+<button class="px-3.5 py-1.5 bg-choco text-white rounded-lg text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1" onclick="orderSingleDirectWhatsApp('Slush – 14 Flavours', 180)">
+<span>Order</span>
+<span class="material-symbols-outlined text-sm">chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FULL INTERACTIVE MENU SECTION (With Working Category Filter & Fixed Images) -->
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-12" id="menu">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-cream-border">
+<div>
+<span class="text-amber-brand text-xs font-bold uppercase tracking-wider">The Complete Parlour Selection</span>
+<h2 class="font-headline text-3xl md:text-4xl text-choco font-bold mt-1">Explore Our Full Menu</h2>
+<p class="text-sm text-choco/75 mt-1">Click any category button below to filter items in real time.</p>
+</div>
+<!-- Extra Topping Banner Callout -->
+<div class="mt-4 md:mt-0 p-3.5 rounded-xl bg-white border border-cream-border flex items-center gap-3 card-shadow">
+<span class="material-symbols-outlined text-amber-brand text-2xl material-symbols-fill">add_circle</span>
+<div>
+<span class="text-xs font-bold text-choco block">Extra Topping • Rs. 20</span>
+<span class="text-[11px] text-choco/70">Sprinkles, Fudge, Crushed Nuts, Oreo &amp; Caramel</span>
+</div>
+</div>
+</div>
+<!-- Real-time Filter Buttons -->
+<div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none" id="categoryFilterBar">
+<button class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-choco text-white whitespace-nowrap transition-colors shadow-xs" data-category="All" onclick="filterMenu('All')">All Items</button>
+<button class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-choco border border-cream-border whitespace-nowrap hover:bg-cream transition-colors" data-category="Ice Cream" onclick="filterMenu('Ice Cream')">Ice Cream</button>
+<button class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-choco border border-cream-border whitespace-nowrap hover:bg-cream transition-colors" data-category="Waffles" onclick="filterMenu('Waffles')">Waffles &amp; Warm</button>
+<button class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-choco border border-cream-border whitespace-nowrap hover:bg-cream transition-colors" data-category="Cold Coffee" onclick="filterMenu('Cold Coffee')">Cold Coffee</button>
+<button class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-choco border border-cream-border whitespace-nowrap hover:bg-cream transition-colors" data-category="Shakes" onclick="filterMenu('Shakes')">Shakes</button>
+<button class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-choco border border-cream-border whitespace-nowrap hover:bg-cream transition-colors" data-category="Sundaes" onclick="filterMenu('Sundaes')">Sundae Cups</button>
+<button class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-choco border border-cream-border whitespace-nowrap hover:bg-cream transition-colors" data-category="Slush" onclick="filterMenu('Slush')">14 Slush Flavours</button>
+</div>
+<!-- Dynamic Product Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="menuItemsContainer">
+<!-- Rendered dynamically by JavaScript with dedicated unique food photography -->
+</div>
+<!-- 14 Refreshing Slush Highlight Banner -->
+<div class="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-amber-brand/15 via-cream to-amber-brand/10 border border-amber-brand/30 shadow-xs">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div>
+<span class="px-3 py-1 rounded bg-amber-brand text-white text-[11px] font-bold uppercase tracking-wider">Sub-Zero Sensation</span>
+<h3 class="font-headline text-2xl md:text-3xl text-choco font-bold mt-2">14 Refreshing Slush Flavours</h3>
+<p class="text-xs sm:text-sm text-choco/80 max-w-2xl mt-1 leading-relaxed">
+          Mango • Black Currant • Orange • Blueberry • Pineapple • Strawberry • Pomegranate • Tamarind (Imli) • Peach • Lychee • Cherry • Lemon • Falsa • Green Apple
+        </p>
+</div>
+<button class="px-6 py-3 rounded-xl bg-amber-brand text-white text-xs font-bold hover:bg-[#d86111] transition-all whitespace-nowrap shadow-sm flex items-center gap-2" onclick="orderSingleDirectWhatsApp('Icy Slush (Pick Your Flavour)', 180)">
+<span class="material-symbols-outlined text-base">ac_unit</span>
+<span>Order Fresh Slush (Rs. 180)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ABOUT SSS SECTION -->
+<section class="py-20 bg-white border-y border-cream-border/60" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 space-y-6">
+<span class="text-amber-brand text-xs font-bold uppercase tracking-wider">The Boutique Story</span>
+<h2 class="font-headline text-3xl md:text-4xl text-choco font-bold leading-tight">More Than Just Ice Cream.</h2>
+<p class="text-base text-choco/80 leading-relaxed">
+          At <strong class="text-choco font-bold">SSS Ice Cream &amp; Snacks</strong>, we bring together delicious desserts, refreshing drinks and sweet moments. From creamy ice creams and freshly made waffles to refreshing slush and shakes, there is something delicious waiting for everyone.
+        </p>
+<p class="text-sm text-choco/70 leading-relaxed">
+          Every scoop begins with whole pasteurized dairy and natural confectionery extracts. We bake our waffle cones warm in-house throughout the evening, greeting you with the unforgettable aroma of caramelized vanilla and toasted butter.
+        </p>
+<div class="grid grid-cols-2 gap-4 pt-3">
+<div class="p-4 rounded-xl bg-cream border border-cream-border">
+<span class="font-headline text-3xl text-amber-brand block font-bold">100%</span>
+<span class="text-xs font-bold text-choco">Pure Dairy Integrity</span>
+<p class="text-[11px] text-choco/70 mt-0.5">No artificial vegetable fats or compromises.</p>
+</div>
+<div class="p-4 rounded-xl bg-cream border border-cream-border">
+<span class="font-headline text-3xl text-amber-brand block font-bold">25+</span>
+<span class="text-xs font-bold text-choco">Dessert Selections</span>
+<p class="text-[11px] text-choco/70 mt-0.5">From chilled slushies to warm waffles.</p>
+</div>
+</div>
+</div>
+<!-- Authentic Atmosphere Images -->
+<div class="lg:col-span-6 grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="rounded-2xl overflow-hidden shadow-md h-56 bg-cream">
+<img alt="SSS Evening Atmosphere" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7kcSPB14inORl9E8HeBEovtMdtYdq85XDe4-197v0lVhMEp0PyxTOxjDr757ZsFIy4YRurFwQ54S6-lp6cDIzqCQBYQRp-a3llB-7WMOze61l6a3xCyvfse4E22MlqEEzHJAzIi6tR8a2iIbu7fQ-S7UBF-S6sl_dz8cGpAkW2d64o3QHodMIcfzYt6U56wR4DLsz3oNQzJmVebv-3yyPAhg7xuwaerHAVjwzmajfnm_d3jehBl0"/>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-md h-40 bg-cream">
+<img alt="Cold Coffee SSS Special" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VDT6kvb-RqV9oT-6Q5V4S0d7thlC2K986vziZdo7Dmf3F97Vt421dQ6r91xVrcZIo1P9pWvTK0wFxntBDOIjFY3C8RHNMM_1FwSAETEuqWfWOY6-c-cUWG9NI-fSfzONe8hOsrUK5Op7NFAIVhDfLxKblebLuRz4tZ9iwHIenA7QER9M04oDChSiC-fE95X5Rws0VuTIPppSgn71--yfZOPdNho5YTJYBKgeJ5lze6"/>
+</div>
+</div>
+<div class="space-y-4 pt-6">
+<div class="rounded-2xl overflow-hidden shadow-md h-40 bg-cream">
+<img alt="Warm Fudgy Brownie" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1WnI2IfK5b7eeXVHFLgWmDyItGomoO55Pye-WjQ-kL11aYk134Z-vY9VcTjQOTH15gTJSrqHWkcXdccew8bfU685RULONOBR-WLWDRPsWfsILGopC9mCaN4Emr8VbdaGwXXdPq2VQmoQ_RVZbdA1uWfRSEKyRadWzW9QsDyrOCqwSsyPqsX3l0BlByyb96lX3I8MQw2-_-YN1bzqN6pFP0m7P6KPizwr6aaDrwraeLv"/>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-md h-56 bg-cream">
+<img alt="Freshly Pressed Waffle Cone" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1Wcgw2HTSHqzzCFpG6DPJARxAJdwtS8FpznEqtfbjYhkQn7z0RXUnRUo0MDuPM_IZGPNPSlqFMJJdtcKiz0B_LDX3jUh9ffGhuLlnTIR229kokrOkniCC_fMNN9gTw_zGPd3kMPiw1MVp7k9r8KQXWXBD9TQEuokOnxvXzwkx35BYh3-quWp_MzkIZBxlB_IGDjkR5YYyjKkaTXBst9UBFTB0zr8nsark0GJU2bsF2R"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY CHOOSE US -->
+<section class="py-16 bg-cream" id="why-us">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+<div class="text-center max-w-xl mx-auto mb-12">
+<span class="text-amber-brand text-xs font-bold uppercase tracking-wider">Quality First</span>
+<h2 class="font-headline text-3xl md:text-4xl text-choco font-bold mt-1">Why People Love SSS</h2>
+<p class="text-sm text-choco/75 mt-2">Crafted with wholesome passion, fresh ingredients, and genuine care.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 rounded-2xl bg-white border border-cream-border card-shadow text-center space-y-3">
+<div class="w-12 h-12 rounded-xl bg-amber-brand/10 text-amber-brand flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-2xl material-symbols-fill">local_drink</span>
+</div>
+<h3 class="font-headline text-base font-bold text-choco">100% Pure Dairy Milk</h3>
+<p class="text-xs text-choco/70 leading-relaxed">Only wholesome dairy and rich cream churned daily with zero cheap substitutes.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-cream-border card-shadow text-center space-y-3">
+<div class="w-12 h-12 rounded-xl bg-amber-brand/10 text-amber-brand flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-2xl material-symbols-fill">cookie</span>
+</div>
+<h3 class="font-headline text-base font-bold text-choco">Baked Waffles On-Site</h3>
+<p class="text-xs text-choco/70 leading-relaxed">Every cone and waffle is freshly pressed on hot cast irons for supreme crunch.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-cream-border card-shadow text-center space-y-3">
+<div class="w-12 h-12 rounded-xl bg-amber-brand/10 text-amber-brand flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-2xl material-symbols-fill">ac_unit</span>
+</div>
+<h3 class="font-headline text-base font-bold text-choco">14 Chilled Slush Flavours</h3>
+<p class="text-xs text-choco/70 leading-relaxed">From sweet tropical mango to tangy Imli, always iced sub-zero and energizing.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-cream-border card-shadow text-center space-y-3">
+<div class="w-12 h-12 rounded-xl bg-amber-brand/10 text-amber-brand flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-2xl material-symbols-fill">sanitizer</span>
+</div>
+<h3 class="font-headline text-base font-bold text-choco">Hygienic &amp; Handcrafted</h3>
+<p class="text-xs text-choco/70 leading-relaxed">Prepared in an immaculate environment with food-grade sanitary standards.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ATMOSPHERE & PARLOUR GALLERY -->
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-12" id="gallery">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-amber-brand text-xs font-bold uppercase tracking-wider">Atmosphere &amp; Delights</span>
+<h2 class="font-headline text-3xl md:text-4xl text-choco font-bold mt-1">Our Parlour Gallery</h2>
+<p class="text-sm text-choco/75 mt-2">Step inside SSS Ice Cream &amp; Snacks. Enjoy the evening street buzz, illuminated parlour, and sweet aromas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<!-- Storefront Feature -->
+<div class="md:col-span-2 lg:col-span-2 md:row-span-2 relative group rounded-2xl overflow-hidden cursor-pointer card-shadow bg-cream" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuDz7kcSPB14inORl9E8HeBEovtMdtYdq85XDe4-197v0lVhMEp0PyxTOxjDr757ZsFIy4YRurFwQ54S6-lp6cDIzqCQBYQRp-a3llB-7WMOze61l6a3xCyvfse4E22MlqEEzHJAzIi6tR8a2iIbu7fQ-S7UBF-S6sl_dz8cGpAkW2d64o3QHodMIcfzYt6U56wR4DLsz3oNQzJmVebv-3yyPAhg7xuwaerHAVjwzmajfnm_d3jehBl0', 'SSS Evening Storefront &amp; Outdoor Seating')">
+<img alt="SSS Boutique Storefront" class="w-full h-full min-h-[320px] md:min-h-[440px] object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7kcSPB14inORl9E8HeBEovtMdtYdq85XDe4-197v0lVhMEp0PyxTOxjDr757ZsFIy4YRurFwQ54S6-lp6cDIzqCQBYQRp-a3llB-7WMOze61l6a3xCyvfse4E22MlqEEzHJAzIi6tR8a2iIbu7fQ-S7UBF-S6sl_dz8cGpAkW2d64o3QHodMIcfzYt6U56wR4DLsz3oNQzJmVebv-3yyPAhg7xuwaerHAVjwzmajfnm_d3jehBl0"/>
+<div class="absolute inset-0 bg-choco/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold text-choco">Boutique Evening Storefront</div>
+</div>
+<!-- Gallery 2 -->
+<div class="relative group rounded-2xl overflow-hidden cursor-pointer card-shadow h-52 bg-cream" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuDz7kcSPB14inORl9E8HeBEovtMdtYdq85XDe4-197v0lVhMEp0PyxTOxjDr757ZsFIy4YRurFwQ54S6-lp6cDIzqCQBYQRp-a3llB-7WMOze61l6a3xCyvfse4E22MlqEEzHJAzIi6tR8a2iIbu7fQ-S7UBF-S6sl_dz8cGpAkW2d64o3QHodMIcfzYt6U56wR4DLsz3oNQzJmVebv-3yyPAhg7xuwaerHAVjwzmajfnm_d3jehBl0', 'SSS Storefront Counters &amp; Waffle Station')">
+<img alt="SSS Counters" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7kcSPB14inORl9E8HeBEovtMdtYdq85XDe4-197v0lVhMEp0PyxTOxjDr757ZsFIy4YRurFwQ54S6-lp6cDIzqCQBYQRp-a3llB-7WMOze61l6a3xCyvfse4E22MlqEEzHJAzIi6tR8a2iIbu7fQ-S7UBF-S6sl_dz8cGpAkW2d64o3QHodMIcfzYt6U56wR4DLsz3oNQzJmVebv-3yyPAhg7xuwaerHAVjwzmajfnm_d3jehBl0"/>
+<div class="absolute inset-0 bg-choco/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded text-xs font-semibold text-choco">Waffles &amp; Slush Counter</div>
+</div>
+<!-- Gallery 3 -->
+<div class="relative group rounded-2xl overflow-hidden cursor-pointer card-shadow h-52 bg-cream" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuCLJNEL0WWRoAFKtzYWLyipAEqtbnFGhrhpsI69iFnZdAASQzm61z9DL-gK1-KA5pe5fDG_YMBSSRMf70P1LjnxxcAPiTDjiulya0qQdKPMIT1lxtoLFSRerG7wPSGa7h8vLeIovcScczLO4rwUTOYUgKfZVmgWuDZ7vJBWY76pMUz8ZdiKQ_CZGLEHkV5P9FLW-rgPSeZo5LyDWXyXFWaOCX2Uw6_L-uVeEfEAdsQ', 'Handcrafted Cold Coffee Special')">
+<img alt="Cold Coffee Floats" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJNEL0WWRoAFKtzYWLyipAEqtbnFGhrhpsI69iFnZdAASQzm61z9DL-gK1-KA5pe5fDG_YMBSSRMf70P1LjnxxcAPiTDjiulya0qQdKPMIT1lxtoLFSRerG7wPSGa7h8vLeIovcScczLO4rwUTOYUgKfZVmgWuDZ7vJBWY76pMUz8ZdiKQ_CZGLEHkV5P9FLW-rgPSeZo5LyDWXyXFWaOCX2Uw6_L-uVeEfEAdsQ"/>
+<div class="absolute inset-0 bg-choco/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded text-xs font-semibold text-choco">Cold Coffee Floats</div>
+</div>
+<!-- Gallery 4 -->
+<div class="relative group rounded-2xl overflow-hidden cursor-pointer card-shadow h-52 bg-cream" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuBP7_7HTk4NQmBjPhCilMkT5_BSQdf7snayDrFJnhVlscbT-gI2Djks9beqO56nudkokw7PCZ9XzBEoAo8RLOAEaRUHym996yCLVyhA4jLVujwcmeOKTn_XLWXlKuI2Ta6PrQ1l4wWA_GCHViTbYJQkgczt_lnGx2D3_PmlXhR-J1m6uynLAazNIx2JBWqLg2-iU-MQEP2FchJG9r3H_X4U7SwRgoz3gmwkrZjI0P4', 'Sizzling Warm Brownie with Ice Cream')">
+<img alt="Fudge Brownie Sundae" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP7_7HTk4NQmBjPhCilMkT5_BSQdf7snayDrFJnhVlscbT-gI2Djks9beqO56nudkokw7PCZ9XzBEoAo8RLOAEaRUHym996yCLVyhA4jLVujwcmeOKTn_XLWXlKuI2Ta6PrQ1l4wWA_GCHViTbYJQkgczt_lnGx2D3_PmlXhR-J1m6uynLAazNIx2JBWqLg2-iU-MQEP2FchJG9r3H_X4U7SwRgoz3gmwkrZjI0P4"/>
+<div class="absolute inset-0 bg-choco/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded text-xs font-semibold text-choco">Fudge Brownie Sundae</div>
+</div>
+<!-- Gallery 5 -->
+<div class="relative group rounded-2xl overflow-hidden cursor-pointer card-shadow h-52 bg-cream" onclick="openLightbox('https://lh3.googleusercontent.com/aida/AEtjO1XWFYr8harZM8iOyAwkFi8rDrrbHEwfE25wRemgUTh5Zy-gaF0KTA2M-9vivObXW_L6IA3pybB6tehPQWGKpiUKGEMyk7l-veIr7a467dX90RQAJzyd5ybA04lU0rDcNdLgxJEHks7YpeMbfiY-1n8swgl6zJsarqWx-Gz3pzeFLAno-zFYiIziv2O3H-IZQavD-XMQ-Dn3Z1tfpy0bAwfd0ZK9nKeHc4xLmpxSbVgn', 'Freshly Baked Belgian Waffle Cones')">
+<img alt="Crisp Waffle Cones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XWFYr8harZM8iOyAwkFi8rDrrbHEwfE25wRemgUTh5Zy-gaF0KTA2M-9vivObXW_L6IA3pybB6tehPQWGKpiUKGEMyk7l-veIr7a467dX90RQAJzyd5ybA04lU0rDcNdLgxJEHks7YpeMbfiY-1n8swgl6zJsarqWx-Gz3pzeFLAno-zFYiIziv2O3H-IZQavD-XMQ-Dn3Z1tfpy0bAwfd0ZK9nKeHc4xLmpxSbVgn"/>
+<div class="absolute inset-0 bg-choco/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded text-xs font-semibold text-choco">Crisp Waffle Cones</div>
+</div>
+</div>
+</section>
+<!-- CUSTOMER TESTIMONIALS -->
+<section class="py-16 bg-white border-y border-cream-border/60">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+<div class="text-center max-w-xl mx-auto mb-10">
+<span class="text-amber-brand text-xs font-bold uppercase tracking-wider">Word On The Street</span>
+<h2 class="font-headline text-3xl text-choco font-bold mt-1">Loved by Dessert Lovers</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl bg-cream border border-cream-border card-shadow flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex text-amber-brand text-sm">
+            ★★★★★
+          </div>
+<p class="text-xs text-choco/80 leading-relaxed italic">
+            "The SSS Special cup with peanut crunch is easily the best ice cream in town. Very creamy and generous portions!"
+          </p>
+</div>
+<div class="pt-4 mt-4 border-t border-cream-border flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-choco text-white text-xs font-bold flex items-center justify-center">H</div>
+<div>
+<span class="text-xs font-bold text-choco block">Hamza Tariq</span>
+<span class="text-[10px] text-choco/60">Regular Customer</span>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-cream border border-cream-border card-shadow flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex text-amber-brand text-sm">
+            ★★★★★
+          </div>
+<p class="text-xs text-choco/80 leading-relaxed italic">
+            "Their Tamarind and Black Currant slush flavours are pure heaven in the evening heat. Fast WhatsApp order response too!"
+          </p>
+</div>
+<div class="pt-4 mt-4 border-t border-cream-border flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-choco text-white text-xs font-bold flex items-center justify-center">S</div>
+<div>
+<span class="text-xs font-bold text-choco block">Sana Sheikh</span>
+<span class="text-[10px] text-choco/60">Verified Order</span>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-cream border border-cream-border card-shadow flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex text-amber-brand text-sm">
+            ★★★★★
+          </div>
+<p class="text-xs text-choco/80 leading-relaxed italic">
+            "Warm freshly baked waffle cones with chocolate dip and peanuts. You can smell the bakery aroma as soon as you walk up!"
+          </p>
+</div>
+<div class="pt-4 mt-4 border-t border-cream-border flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-choco text-white text-xs font-bold flex items-center justify-center">A</div>
+<div>
+<span class="text-xs font-bold text-choco block">Ali Raza</span>
+<span class="text-[10px] text-choco/60">Foodie</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LOCATION & OPENING HOURS -->
+<section class="py-20 bg-cream" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Contact & Timings Info -->
+<div class="lg:col-span-5 space-y-6">
+<span class="text-amber-brand text-xs font-bold uppercase tracking-wider">Plan Your Visit</span>
+<h2 class="font-headline text-3xl md:text-4xl text-choco font-bold">Location &amp; Hours</h2>
+<p class="text-sm text-choco/75">
+          Stop by for a midnight sweet tooth craving or order swift delivery directly to your doorstep via WhatsApp.
+        </p>
+<div class="space-y-4 pt-2">
+<!-- Timings -->
+<div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-cream-border card-shadow">
+<span class="material-symbols-outlined text-amber-brand text-2xl mt-0.5 material-symbols-fill">schedule</span>
+<div>
+<h4 class="text-sm font-bold text-choco">Operating Hours</h4>
+<p class="text-xs text-choco/75 mt-0.5">Monday – Sunday: <strong class="text-choco font-bold">1:00 PM – 1:00 AM</strong></p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-800">Open Daily</span>
+</div>
+</div>
+<!-- WhatsApp Hotline -->
+<div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-cream-border card-shadow">
+<span class="material-symbols-outlined text-green-600 text-2xl mt-0.5 material-symbols-fill">chat</span>
+<div>
+<h4 class="text-sm font-bold text-choco">Order Hotline &amp; WhatsApp</h4>
+<a class="text-xs font-bold text-amber-brand hover:underline" href="https://wa.me/923218822161" target="_blank">+92 321 8822161</a>
+<p class="text-[11px] text-choco/60 mt-0.5">Quick responses for takeaway &amp; delivery</p>
+</div>
+</div>
+<!-- Store Address -->
+<div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-cream-border card-shadow">
+<span class="material-symbols-outlined text-amber-brand text-2xl mt-0.5 material-symbols-fill">pin_drop</span>
+<div>
+<h4 class="text-sm font-bold text-choco">Parlour Address</h4>
+<p class="text-xs text-choco/75 mt-0.5">SSS Ice Cream &amp; Snacks, Main Boutique Boulevard / Promenade</p>
+<p class="text-[11px] text-choco/60 mt-0.5">Outdoor cozy patio seating available</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map & Catering Query Card -->
+<div class="lg:col-span-7 space-y-6">
+<div class="rounded-2xl overflow-hidden border border-cream-border bg-white p-6 card-shadow">
+<h3 class="font-headline text-lg font-bold text-choco mb-1">Find Us on the Map</h3>
+<p class="text-xs text-choco/70 mb-4">Easily accessible with convenient parking and pedestrian friendly promenade.</p>
+<!-- Stylized Map Placeholder Visual -->
+<div class="relative h-64 w-full rounded-xl overflow-hidden bg-cream border border-cream-border flex items-center justify-center">
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(#F47721_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="relative z-10 text-center p-6 bg-white/95 rounded-2xl shadow-lg border border-cream-border max-w-sm">
+<span class="material-symbols-outlined text-amber-brand text-3xl material-symbols-fill mb-1">icecream</span>
+<h4 class="font-headline text-sm font-bold text-choco">SSS Ice Cream &amp; Snacks</h4>
+<p class="text-xs text-choco/70 mt-1">Main Boutique Boulevard • Open Till 1:00 AM</p>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-amber-brand mt-3 hover:underline" href="https://maps.google.com" target="_blank">
+<span>Open in Google Maps</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="mt-5 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-cream-border">
+<span class="text-xs text-choco/70">Custom bulk orders, birthday sundae bars &amp; events?</span>
+<a class="px-4 py-2 rounded-xl bg-choco text-white text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1.5" href="https://wa.me/923218822161?text=Assalam-o-Alaikum!%20I%20am%20inquiring%20about%20event%20catering%20and%20party%20tasting%20boxes." target="_blank">
+<span class="material-symbols-outlined text-sm">celebration</span>
+<span>Event Catering Query</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="docked full-width bg-choco text-cream border-t border-choco-dark">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 flex flex-col gap-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+<!-- Brand Block -->
+<div class="lg:col-span-2 space-y-4">
+<a class="flex items-center gap-3" href="#home">
+<div class="w-10 h-10 rounded-xl bg-amber-brand text-white flex items-center justify-center font-headline text-xl font-bold">
+            S
+          </div>
+<span class="font-headline font-bold text-lg text-white">SSS Ice Cream &amp; Snacks</span>
+</a>
+<p class="text-xs text-cream/70 max-w-sm leading-relaxed">
+          Crafted with pure dairy cream, artisanal syrups, and love. Bringing delightful sweetness and frozen bliss to our community daily.
+        </p>
+<div class="flex items-center gap-3 pt-2">
+<a aria-label="WhatsApp" class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-amber-brand transition-colors" href="https://wa.me/923218822161" target="_blank">
+<span class="material-symbols-outlined text-base">chat</span>
+</a>
+<a aria-label="Location" class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-amber-brand transition-colors" href="#contact">
+<span class="material-symbols-outlined text-base">location_on</span>
+</a>
+<a aria-label="Menu" class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-amber-brand transition-colors" href="#menu">
+<span class="material-symbols-outlined text-base">restaurant_menu</span>
+</a>
+</div>
+</div>
+<!-- Quick Navigation -->
+<div>
+<h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Explore</h4>
+<ul class="space-y-2 text-xs text-cream/70">
+<li><a class="hover:text-amber-brand transition-colors" href="#home">Home</a></li>
+<li><a class="hover:text-amber-brand transition-colors" href="#best-sellers">Best Sellers</a></li>
+<li><a class="hover:text-amber-brand transition-colors" href="#menu">Our Menu</a></li>
+<li><a class="hover:text-about transition-colors" href="#about">About Us</a></li>
+<li><a class="hover:text-amber-brand transition-colors" href="#gallery">Parlour Gallery</a></li>
+</ul>
+</div>
+<!-- Specialties -->
+<div>
+<h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Specialties</h4>
+<ul class="space-y-2 text-xs text-cream/70">
+<li><a class="hover:text-amber-brand transition-colors" href="#menu" onclick="filterMenu('Ice Cream')">Handmade Cones</a></li>
+<li><a class="hover:text-amber-brand transition-colors" href="#menu" onclick="filterMenu('Waffles')">Belgian Waffles</a></li>
+<li><a class="hover:text-amber-brand transition-colors" href="#menu" onclick="filterMenu('Cold Coffee')">Cold Coffee Floats</a></li>
+<li><a class="hover:text-amber-brand transition-colors" href="#menu" onclick="filterMenu('Shakes')">Thick Milkshakes</a></li>
+<li><a class="hover:text-amber-brand transition-colors" href="#menu" onclick="filterMenu('Slush')">14 Slush Flavours</a></li>
+</ul>
+</div>
+<!-- Parlour Info -->
+<div>
+<h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Parlour Hours</h4>
+<p class="text-xs text-cream/70 leading-relaxed">
+          Monday – Sunday<br/>
+<strong class="text-white font-bold">1:00 PM – 1:00 AM</strong>
+</p>
+<div class="mt-4 pt-4 border-t border-white/10">
+<span class="text-[11px] text-cream/50 block">WhatsApp Hotline</span>
+<a class="text-xs font-bold text-amber-brand hover:underline" href="https://wa.me/923218822161" target="_blank">+92 321 8822161</a>
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/50 gap-4">
+<p>© 2024 SSS Ice Cream &amp; Snacks. All rights reserved.</p>
+<div class="flex items-center space-x-6">
+<a class="hover:text-amber-brand transition-colors" href="#contact">Store Hours</a>
+<a class="hover:text-amber-brand transition-colors" href="https://wa.me/923218822161">WhatsApp Ordering</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- SLIDE-OUT SHOPPING CART DRAWER -->
+<div class="fixed inset-0 bg-choco/60 backdrop-blur-xs z-50 hidden transition-opacity" id="cartOverlay" onclick="toggleCartDrawer(false)"></div>
+<div class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col" id="cartDrawer">
+<!-- Drawer Header -->
+<div class="p-5 border-b border-cream-border flex items-center justify-between bg-cream">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-brand text-2xl">shopping_cart</span>
+<h3 class="font-headline text-lg font-bold text-choco">Your Order Cart</h3>
+</div>
+<button aria-label="Close cart" class="p-1 rounded-lg hover:bg-white text-choco transition-colors" onclick="toggleCartDrawer(false)">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Cart Items Container -->
+<div class="flex-1 overflow-y-auto p-5 space-y-4" id="cartItemsList">
+<!-- Populated dynamically via JS -->
+</div>
+<!-- Drawer Footer / Checkout -->
+<div class="p-5 border-t border-cream-border bg-cream space-y-4">
+<!-- Extra Topping Option -->
+<div class="flex items-center justify-between text-xs">
+<label class="flex items-center gap-2 cursor-pointer text-choco font-semibold">
+<input class="rounded border-cream-border text-amber-brand focus:ring-amber-brand" id="cartExtraToppings" onchange="renderCart()" type="checkbox"/>
+<span>Add Toppings to Order (+Rs. 20)</span>
+</label>
+</div>
+<!-- Subtotal -->
+<div class="flex items-center justify-between pt-2 border-t border-cream-border">
+<span class="text-xs text-choco/70">Estimated Subtotal</span>
+<span class="font-headline text-xl font-bold text-choco" id="cartTotalPrice">Rs. 0</span>
+</div>
+<!-- WhatsApp Checkout Trigger Button -->
+<button class="w-full py-3.5 rounded-xl bg-choco text-white text-xs font-bold hover:bg-amber-brand transition-all flex items-center justify-center gap-2 shadow-md active:scale-95" onclick="checkoutCartWhatsApp()">
+<span class="material-symbols-outlined text-green-400 text-lg material-symbols-fill">chat</span>
+<span>Checkout via WhatsApp</span>
+</button>
+<p class="text-[11px] text-center text-choco/60">Transmitted directly to hotline: <span class="font-bold text-choco">+92 321 8822161</span></p>
+</div>
+</div>
+<!-- FLOATING QUICK WHATSAPP FAB BUTTON -->
+<aside aria-label="Quick Actions" class="fixed bottom-6 right-6 z-40">
+<a aria-label="Chat on WhatsApp" class="w-14 h-14 rounded-full bg-green-600 text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 border-2 border-white focus:outline-none" href="https://wa.me/923218822161?text=Assalam-o-Alaikum!%20I%20would%20like%20to%20order%20from%20SSS%20Ice%20Cream%20%26%20Snacks." target="_blank">
+<span class="material-symbols-outlined text-3xl material-symbols-fill">chat</span>
+</a>
+</aside>
+<!-- LIGHTBOX MODAL -->
+<div class="fixed inset-0 z-50 bg-choco/90 backdrop-blur-md hidden items-center justify-center p-4" id="lightboxModal" onclick="closeLightbox()">
+<div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+<button class="absolute -top-12 right-0 text-white hover:text-amber-brand transition-colors" onclick="closeLightbox()">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<img alt="Enlarged View" class="max-w-full max-h-[80vh] rounded-2xl object-contain shadow-2xl border-2 border-white/20" id="lightboxImg" src=""/>
+<p class="text-white text-sm font-semibold mt-3 text-center" id="lightboxCaption"></p>
+</div>
+</div>
+<!-- JAVASCRIPT: Complete Menu Dataset with 100% Unique Dedicated Food Photography -->
+<script>
+  const WHATSAPP_PHONE = "923218822161";
+
+  // Full Menu Dataset matching requirements with 100% unique dedicated food images
+  const MENU_DATA = [
+    // 1. ICE CREAM
+    { name: "Cone Ice Cream", price: 120, category: "Ice Cream", desc: "Classic crisp wafer cone filled with our freshly churned creamy scoop.", image: "https://lh3.googleusercontent.com/aida/AEtjO1VACNNX_zXjpk6Tq7N02MoNnKgVn0S_h9yXajaoKOQlgHeUkBwYHkTazX9r-JqP5zNCW46EH46mmT7k4kcl40-xZAISN2nTVmlR_Opg6wkrzsSuFjNuEiCizFGLB1VmE-HMgbndCbIMzcQm6wdX89mL6lutkB-9x6pGg2yJP8nn21mj3mUo3aMt4ZVMx4Ulvh5P1haxBc_puoK0VOg-tYabDOQp6VHVQVjj5u1NsHpi" },
+    { name: "Oreo Cone", price: 200, category: "Ice Cream", desc: "Chocolate cookie wafer cone crowned with cookies & cream churned gelato.", image: "https://lh3.googleusercontent.com/aida/AEtjO1XRS9grv0LBrKTajs-kCOPwi9w90vSpeQXb11fxFq4wLczc-jGZ-8E2uqXVPVt2jpaAD4nWUkl5GyO8WEOAtktYCJCS28rLc80vpgBy4faa1J-QhLkCeFhykUFKIl6KfnqnSQu3m0IDD_plhYibbmNphuolN_E2eRtc6GI4LiIblyaCQiIZmJIt_rQgxT-PLtZDQzZol0shbUHf3vGWXMFFCmDHgKoyVDJwatkzsQU" },
+    { name: "Dip Cone", price: 120, category: "Ice Cream", desc: "Silky soft-serve cone immersed in hardening warm chocolate shell.", image: "https://lh3.googleusercontent.com/aida/AEtjO1VLydJJ89W7jSlnjw7pywIjwPP-5gsINn0WhtQkDixDOOIr1HhXm7REK0X1czoMNiuqfyDX_fC7MfgUMAYGCfqD5KII67ifoTRymZXnCaTC-s23Tr0CE3_2z0EN61DJNqBAmWNCeILXBfeCBk2VdVzqqy0A3fi1qnZrSv-AMoLq4TkN87gVjxJGQXOgpMs4IoUeefkgGr0A-S4I_Xwbex2kFt4P7JA8tOxR5z8gafPu" },
+    { name: "Ice Cream Cup – Kids", price: 120, category: "Ice Cream", desc: "Kid-sized portion of fresh wholesome cream ice cream with rainbow sprinkles.", image: "https://lh3.googleusercontent.com/aida/AEtjO1UhPewPMuHGS29kzR2XvpmwoXoRu51qsCUX1qhVH9cDVAal23AZgAtMYAqbvAWL-B8zLjnyhdpi2rGGaBPhcIFqMbFbAvCumgYvvtap2ZxhN4LGiSCUp0VuQEkTqWKsdzf6wuiwlXd3Lftf06y-vsNheBAwDzu_h0JRTbqEMnGrbwrmSK6Pq0LMqrAg5cYBVOGc_Mu6_Jzzxz9tjbNKNO9NrHqnQCULBFNro8J0_pxl" },
+    { name: "Ice Cream Cup – Small", price: 150, category: "Ice Cream", desc: "Single satisfying scoop of pure churned dairy ice cream in cup.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCvCwBHVRLqlaLYIbKqJ33D9wxJUJ2WBl17AwRonoIPUc1EaT_bORaPa6noe4fnkwMx4iRmJTi63SINr-4aRVmuiaslnQAKNppmgUMOwNFPtOVj9rwqw2p6fQONEl0GAs6Zb9H_GcElBfd_MwuT2P0vob6IqicJAJnA1dZGTDEKe_mPDYuRfhN0OnD5KRW7Id945bU5KHzJPnCguPdo3PI-nKymYdzvoWM_8Jvvqys" },
+    { name: "Ice Cream Cup – Medium", price: 200, category: "Ice Cream", desc: "Generous twin scoops with complimentary drizzle and crunchy wafer stick.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBtPZ3aTLtb4p8z1tFK3AWXy5BN3QaqVltca-A8ImzJTW-XeVgczPS3gYoeCdBSi4tKrAwaIaR7LptMbmA94aInPoKOx07ItgMnWGcsqU4OWoYkw-viKkOvKQiF0TD4EtWTntlgW30V1OtnfBVsZ17tUHvtskcMQpNmsemi2mKkQe5-Fq8Z4ujKfxATvl18wTWBYsmnIMPylhMVN75E0fiD27Fk58LgSUizj5ON5Tk" },
+    { name: "Ice Cream Cup – Large", price: 330, category: "Ice Cream", desc: "Trio of creamy scoops with rich dessert syrup drizzle of choice.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAGG62I2aZDGfQ-_ofbpYQtEQxEVF3-JXMySesMRvSiHb9a_6gdkvrg7CLAS-l62Rc6NDaDKAhGT13RP4HiqNYYKjrMH5kBWZPpkmOQPcyblWU_Ju4SIP9lL225uE3wiuavW-DiQLgBiPlmPfbKgKrmXp0D1LcAzco9NgldXY7-0XcjfyW1PYAOhYum9hnsjTALjs4qouRrYKKjlefxxtdjiG4uKH317EMFjkZkEvM" },
+    { name: "Ice Cream Cup with Crunch & Peanuts", price: 350, category: "Ice Cream", desc: "Velvety scoops coated generously in roasted caramelized peanuts & toffee crunch.", image: "https://lh3.googleusercontent.com/aida/AEtjO1XNjZoPM9jfOR9a1t0C5_gT-c9Hzf7-YVPnl4QXFm6z-tBwKz55qhVEKeZ0sNbWATtEjpeZY8XOsaIJrpvshLYVyCH9-Trky_I7vq0QIQHqpo2sMAmz5ond2eo1Vm78wUN3SazYg_gXUzYWwe8NihZNXSi8H75ixfsnWIH_gJkDMoXqoM5Ifdf2bMUZ1sOgWTwNcSm59UN2yke9peF9fiSu_FizAK9qGDNZcr-oKCwJ" },
+    { name: "Ice Cream Cup – SSS Special", price: 350, category: "Ice Cream", desc: "House signature combination: premium scoops, assorted pralines, fudge & nuts.", image: "https://lh3.googleusercontent.com/aida/AEtjO1XH-M9OaeOsuZm4tQUKMFiAP0KU__K6Qyyyr0TgbhZuBjOop9DaPll54UJ7RXdNyuvwczdHxkZiFYufqpwmyaiNaqSUtevkODnDCUVaACz7H8PbQAIskgAacCUmsOHlKlLZPuB9OEYw0EWZeFtzME0riEN8WT_FtFsz9C9e7oPAqh0rhRQIxwctAn9k6JNqMaJwEt6vxIqr8AxpkAQ8MZyfs08hScO7-kHaxPXm6IU" },
+
+    // 2. WAFFLES & WARM
+    { name: "Waffle Cone", price: 150, category: "Waffles", desc: "Crispy freshly pressed artisanal waffle cone with delicate caramelized butter flavor.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuByvud1gG4RZiMmfENnxsDk-LMCRItuckBOTnAxwDKbqvMi3x9yxS5BjWVgu-vlnfqLZJNWeNIzJNcHn1At0mBGUCuXyNtR3mHj-TTz0-bSpVrtFXjA7MQ2prwlDuYzbOMOegk28w-ANY7GfY869xfPvzcs-OYqU2Yls6B4B5k2aCMqqoyfj99FwUcGDPKnLnPmcRJVKsWUuqEOPg2pwLK8jfBlo2rodr4aoZWTjho" },
+    { name: "Special Waffle Cone with Crunch & Peanuts", price: 200, category: "Waffles", desc: "Our famous baked waffle cone dipped in chocolate and rolled in toasted peanuts.", image: "https://lh3.googleusercontent.com/aida/AEtjO1Wcgw2HTSHqzzCFpG6DPJARxAJdwtS8FpznEqtfbjYhkQn7z0RXUnRUo0MDuPM_IZGPNPSlqFMJJdtcKiz0B_LDX3jUh9ffGhuLlnTIR229kokrOkniCC_fMNN9gTw_zGPd3kMPiw1MVp7k9r8KQXWXBD9TQEuokOnxvXzwkx35BYh3-quWp_MzkIZBxlB_IGDjkR5YYyjKkaTXBst9UBFTB0zr8nsark0GJU2bsF2R" },
+    { name: "Brownie with Ice Cream", price: 350, category: "Waffles", desc: "Warm gooey dark chocolate brownie served alongside a scoop of pure vanilla cream.", image: "https://lh3.googleusercontent.com/aida/AEtjO1WnI2IfK5b7eeXVHFLgWmDyItGomoO55Pye-WjQ-kL11aYk134Z-vY9VcTjQOTH15gTJSrqHWkcXdccew8bfU685RULONOBR-WLWDRPsWfsILGopC9mCaN4Emr8VbdaGwXXdPq2VQmoQ_RVZbdA1uWfRSEKyRadWzW9QsDyrOCqwSsyPqsX3l0BlByyb96lX3I8MQw2-_-YN1bzqN6pFP0m7P6KPizwr6aaDrwraeLv" },
+
+    // 3. COLD COFFEE
+    { name: "Cold Coffee with Ice Cream", price: 360, category: "Cold Coffee", desc: "Chilled espresso concentrate poured over velvety hand-churned vanilla scoop.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCLJNEL0WWRoAFKtzYWLyipAEqtbnFGhrhpsI69iFnZdAASQzm61z9DL-gK1-KA5pe5fDG_YMBSSRMf70P1LjnxxcAPiTDjiulya0qQdKPMIT1lxtoLFSRerG7wPSGa7h8vLeIovcScczLO4rwUTOYUgKfZVmgWuDZ7vJBWY76pMUz8ZdiKQ_CZGLEHkV5P9FLW-rgPSeZo5LyDWXyXFWaOCX2Uw6_L-uVeEfEAdsQ" },
+    { name: "Cold Coffee with Crunch & Peanuts", price: 390, category: "Cold Coffee", desc: "Blended iced coffee topped with whipped cream, chocolate syrup, and toasted nut crunch.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCRPZP33YTM2v70QB2wz26SyPRPO9zDRXxS5dWn8ALky7rpR6wltVvj5vuwjigIcM3PSunIi6smMSfTNxKPWJKNCu6O2llvuUjrhNXwQ2rRirzfmDbr7wR7oXpYteRXsuioH3k_Lfr10hq4BY9xcrLqKW8bp2u6i-lBAl8JfqmJ3dKMqfRSDxy4UyhH1fTd2KRZSrkzIT3pBzn4uIjQwudZd-F2BA9Ie4fOA2XmKrY" },
+    { name: "Cold Coffee SSS Special with Crunch & Peanuts", price: 400, category: "Cold Coffee", desc: "Ultimate cold coffee creation: double scoop float, thick caramel, and heavy crunch topping.", image: "https://lh3.googleusercontent.com/aida/AEtjO1VDT6kvb-RqV9oT-6Q5V4S0d7thlC2K986vziZdo7Dmf3F97Vt421dQ6r91xVrcZIo1P9pWvTK0wFxntBDOIjFY3C8RHNMM_1FwSAETEuqWfWOY6-c-cUWG9NI-fSfzONe8hOsrUK5Op7NFAIVhDfLxKblebLuRz4tZ9iwHIenA7QER9M04oDChSiC-fE95X5Rws0VuTIPppSgn71--yfZOPdNho5YTJYBKgeJ5lze6" },
+
+    // 4. SHAKES
+    { name: "Oreo Shake", price: 380, category: "Shakes", desc: "Thick hand-spun shake infused with real crunchy Oreos and whole farm milk.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCXt0SuYbJ0CLNsMEKZAY5i9xEIp_8xKvWqX4Dw1RyXutGxB6XfqgIFzEl0M1Az3oroKyBxGuN2y-wgH1cJtJZ6r7MOiBgL-dPelPApmTwiQS339PvwXIOisZt0wP9_LVZXRNX8X-jybrxs8csESb7ZlUee-ZAuyrtbDUNW0F2TNaES3NfE1OwTPSe0AIRystUotQPSkGQwR1Eatuj3Njfn53iSFuDNBFq5oLOY4Po" },
+    { name: "Vanilla Shake", price: 350, category: "Shakes", desc: "Fragrant Madagascar vanilla bean infused creamy thickshake.", image: "https://lh3.googleusercontent.com/aida/AEtjO1Xyh1_oFA6Yk2wP5m3ElYqbr_R8m0Iidi8nQzEMiFLbvzC6en2xk1SsSZ60fxpKHdLFDp0C-CqCoaVQyrp1WLSWjjd5gx0f6_91rvjqVoNpTcA2-8YjMNPqQpeWwmOtfFZukGrV7eSEfZLPUmBsuXkcJzX9sm5_ewooM3x8cM9ZtaVxa2FhbBTVPK7tCEDy-Seb7qo2yMMaXhsTYBgKpOdiltBLqgmTvggPvGuUXx8B" },
+    { name: "Chocolate Shake", price: 350, category: "Shakes", desc: "Indulgent Dutch chocolate milkshake blended with melted cocoa curls.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7DszWrG6jLc43Uiildl68d11FP49v96mj65aR1u-s22-kgBg1Q7KyoIMF6qCxFgAo25QX8515UJZzJCHQGuANmIORWURt20idneBndhInFkDIIs8jd0G0TfDErQR4ANXwNBwR36kBCMA89dBiNUVyStyXM1O4yA2rwvz3KcMYwlxPoltqrpRH4eW4vrasoizNLPBjtlcmpt34U_cdc8jDNLQ_t84etqYI5bAfYYg" },
+
+    // 5. SUNDAE CUPS
+    { name: "Strawberry Cup", price: 350, category: "Sundaes", desc: "Sun-ripened strawberry coulis layered over whipped cream and ice cream.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDlvpfeDkRl1arL0UlOBBW8hSUVoXzmUiK1q4kHw0mqAV54kOqYVQbpZ5b-F8uFkOLmmbbst-ZU5ut1XBb6Au3d1B0h_9cNWFyzClp_Bmb0U-a3KeLE-0tDhPIJsBy0BNuEpjqnJPLvHWO-T5zLxr0o9Kq1U8j1VFv3jzSWhciaIAY-q6BtBVb36keHFHIGIp0PzeWOL3M1bDsZs97qe3SL1dDln5EJFiGTiv8x__A" },
+    { name: "Mango Cup", price: 350, category: "Sundaes", desc: "Tropical sweet chaunsa mango puree swirled into rich clotted cream scoops.", image: "https://lh3.googleusercontent.com/aida/AEtjO1Uua0qhAXk4WSlnjYIchEhJeUwBHDv-AI7T_OLXIZo2tNe_HEwhgGYmmaiQvN7UTzWdr-VgmvTYhOsh8xYsuUCr45WQixo9raaiNqoilj0l4gvZY_uf-PNNkftsiaP_XfEVSDSV_IFk5bd-dhnUnjFsBe5n-3bN82_Mh9IUcUaLc-RgaspdTG7EmMJO7i1PTgHAUu-0dc2G7Jm6zLa7SlrDmCtUX9gEAHMMrTVLPVLq" },
+    { name: "Caramel Cup", price: 350, category: "Sundaes", desc: "Salted butter caramel drizzle layered with buttery crunch and vanilla cream.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBoWvYn8FKkuisqWgoFs1W0BcUyIkfh_dWr4c09ImSuKNR3LjrU2BXlf5FuUlB3IKcYmaHiCd8czptNf-7dyf7CrWYyyKpISOmw-2TKG16-0DYxTnV4dRl9Un-Oe1TS7oBe3pSJtDhtdiU74Y8vRPSfB1z2FoU9UqccTTWtDWs4gsd1oN6OHpitWucolOtpa8i2GQZdBuwrQMNjYsM2ZwWpMKvnOyDB4l9Zw79f3mw" },
+    { name: "Chocolate Cup", price: 350, category: "Sundaes", desc: "Layers of hot cocoa fudge, chocolate sponge crumbs, and dark chocolate ice cream.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBP7_7HTk4NQmBjPhCilMkT5_BSQdf7snayDrFJnhVlscbT-gI2Djks9beqO56nudkokw7PCZ9XzBEoAo8RLOAEaRUHym996yCLVyhA4jLVujwcmeOKTn_XLWXlKuI2Ta6PrQ1l4wWA_GCHViTbYJQkgczt_lnGx2D3_PmlXhR-J1m6uynLAazNIx2JBWqLg2-iU-MQEP2FchJG9r3H_X4U7SwRgoz3gmwkrZjI0P4" },
+    { name: "Blueberry Cup", price: 350, category: "Sundaes", desc: "Wild blueberry compote folded into creamy churned dairy with shortbread crunch.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDimgbouXV8tp5RJD8CwtmP2e3j4VGfACrwI0O0Hkq_cvUKwyBIWuKB54a8Iy7kh0w18CF1rzkLarw-bC01jnhM1tHsZtJau36MMjb6_yqL8hQUXLQ6RpmPgzWHcqm4plROcUKq-OChp0f_5dfSsqFo6v0rLzC22ch7cixRrfD-ZE7IUumr38jkdiNcMqhw_z_7DcqO3b7axYsRmGamj8Ibeg8liqbnlqRsFoT_59Q" },
+
+    // 6. 14 SLUSH FLAVOURS
+    { name: "Slush – 14 Flavours", price: 180, category: "Slush", desc: "Mango, Black Currant, Orange, Blueberry, Pineapple, Strawberry, Pomegranate, Tamarind, Peach, Lychee, Cherry & more.", image: "https://lh3.googleusercontent.com/aida/AEtjO1UUfzuFedqtzMDrAIoIfQqxnWucFw-MmeH_lybphbhWOeh-BsoXbOekKDbwh_H5q_hNVSuOU_c6qoC0NvRF_TC-byKox8Nlo32pjg_Q4Qq0O58dJC2XEUetzwEuJLkBDzXhBBxLWIYL9S2Vo7UYjABOuHgMYR1i-Ii5o-ixFVjM6hLL2ivIgJXbrkApNQ3sqEbd6zXzBPAhdTp_dRHk5agTwes-LIVEBMNDjyyhk60" }
+  ];
+
+  // In-Memory Shopping Cart
+  let cart = [];
+
+  // Render Menu with .product-image wrapper and unique food photography
+  function renderMenu(items) {
+    const container = document.getElementById("menuItemsContainer");
+    container.innerHTML = "";
+
+    items.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "product-card bg-white rounded-2xl p-4 md:p-5 border border-cream-border card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between";
+      card.innerHTML = `
+        <div>
+          <div class="product-image mb-3.5">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+            <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-xs text-choco text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider shadow-xs">${item.category}</span>
+          </div>
+          <div class="flex justify-between items-start gap-2">
+            <h4 class="font-headline text-base md:text-lg font-bold text-choco">${item.name}</h4>
+            <span class="font-headline text-base md:text-lg text-amber-brand font-bold whitespace-nowrap">Rs. ${item.price}</span>
+          </div>
+          <p class="text-xs text-choco/70 mt-1.5 leading-relaxed">${item.desc}</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-cream-border flex items-center justify-between gap-2">
+          <button onclick="addToCart('${item.name}', ${item.price}, '${item.image}')" class="px-3 py-1.5 rounded-lg border border-choco text-choco text-xs font-bold hover:bg-cream transition-colors flex items-center gap-1 active:scale-95">
+            <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+          <button onclick="orderSingleDirectWhatsApp('${item.name}', ${item.price})" class="px-3.5 py-1.5 bg-choco text-white rounded-lg text-xs font-bold hover:bg-amber-brand transition-colors flex items-center gap-1 active:scale-95">
+            <span>Order</span>
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // Real-time Category Filtering
+  function filterMenu(category) {
+    const buttons = document.querySelectorAll(".menu-filter-btn");
+    buttons.forEach(btn => {
+      if (btn.getAttribute("data-category") === category) {
+        btn.className = "menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-choco text-white whitespace-nowrap transition-colors shadow-xs";
+      } else {
+        btn.className = "menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-choco border border-cream-border whitespace-nowrap hover:bg-cream transition-colors";
+      }
+    });
+
+    if (category === "All") {
+      renderMenu(MENU_DATA);
+    } else {
+      const filtered = MENU_DATA.filter(item => item.category.toLowerCase().includes(category.toLowerCase()));
+      renderMenu(filtered);
+    }
+  }
+
+  // Single Item Direct WhatsApp Order
+  function orderSingleDirectWhatsApp(productName, price) {
+    const message = `Assalam-o-Alaikum! I would like to order:\nProduct: ${productName}\nPrice: Rs. ${price}\nQuantity: 1\nPlease confirm my order.`;
+    const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
+  }
+
+  // Shopping Cart Management
+  function addToCart(name, price, image) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+    updateCartBadge();
+    renderCart();
+    toggleCartDrawer(true);
+  }
+
+  function adjustCartQuantity(name, delta) {
+    const item = cart.find(i => i.name === name);
+    if (!item) return;
+    item.quantity += delta;
+    if (item.quantity <= 0) {
+      cart = cart.filter(i => i.name !== name);
+    }
+    updateCartBadge();
+    renderCart();
+  }
+
+  function removeFromCart(name) {
+    cart = cart.filter(i => i.name !== name);
+    updateCartBadge();
+    renderCart();
+  }
+
+  function updateCartBadge() {
+    const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const badge = document.getElementById("cartCountBadge");
+    badge.innerText = totalCount;
+  }
+
+  function toggleCartDrawer(open) {
+    const drawer = document.getElementById("cartDrawer");
+    const overlay = document.getElementById("cartOverlay");
+    if (open) {
+      overlay.classList.remove("hidden");
+      drawer.classList.remove("translate-x-full");
+    } else {
+      drawer.classList.add("translate-x-full");
+      overlay.classList.add("hidden");
+    }
+  }
+
+  function renderCart() {
+    const list = document.getElementById("cartItemsList");
+    if (cart.length === 0) {
+      list.innerHTML = `
+        <div class="text-center py-12 text-choco/60">
+          <span class="material-symbols-outlined text-4xl mb-2 text-choco/30">remove_shopping_cart</span>
+          <p class="text-xs font-semibold">Your cart is currently empty.</p>
+          <p class="text-[11px] mt-1 text-choco/50">Explore our menu and add your favorite treats!</p>
+        </div>
+      `;
+      document.getElementById("cartTotalPrice").innerText = "Rs. 0";
+      return;
+    }
+
+    let subtotal = 0;
+    list.innerHTML = "";
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      subtotal += itemTotal;
+
+      const row = document.createElement("div");
+      row.className = "flex items-center gap-3 p-3 rounded-xl bg-cream border border-cream-border";
+      row.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-lg object-cover bg-white">
+        <div class="flex-1 min-w-0">
+          <h4 class="text-xs font-bold text-choco truncate">${item.name}</h4>
+          <span class="text-[11px] text-amber-brand font-semibold">Rs. ${item.price}</span>
+          <div class="flex items-center gap-2 mt-1">
+            <button onclick="adjustCartQuantity('${item.name}', -1)" class="w-6 h-6 rounded bg-white text-choco font-bold text-xs flex items-center justify-center hover:bg-amber-brand hover:text-white transition-colors">-</button>
+            <span class="text-xs font-bold text-choco">${item.quantity}</span>
+            <button onclick="adjustCartQuantity('${item.name}', 1)" class="w-6 h-6 rounded bg-white text-choco font-bold text-xs flex items-center justify-center hover:bg-amber-brand hover:text-white transition-colors">+</button>
+          </div>
+        </div>
+        <div class="text-right">
+          <span class="text-xs font-bold text-choco block">Rs. ${itemTotal}</span>
+          <button onclick="removeFromCart('${item.name}')" class="text-red-500 hover:text-red-700 text-xs mt-2" title="Remove item">
+            <span class="material-symbols-outlined text-base">delete</span>
+          </button>
+        </div>
+      `;
+      list.appendChild(row);
+    });
+
+    const hasExtra = document.getElementById("cartExtraToppings").checked;
+    if (hasExtra) subtotal += 20;
+
+    document.getElementById("cartTotalPrice").innerText = `Rs. ${subtotal}`;
+  }
+
+  // Checkout Entire Cart via WhatsApp
+  function checkoutCartWhatsApp() {
+    if (cart.length === 0) {
+      alert("Your cart is empty. Please add items first.");
+      return;
+    }
+
+    const hasExtra = document.getElementById("cartExtraToppings").checked;
+    let itemsText = cart.map(i => `- ${i.name} (Qty: ${i.quantity}, Price: Rs. ${i.price * i.quantity})`).join("\n");
+    let total = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+    
+    if (hasExtra) {
+      itemsText += "\n- Extra Toppings (+Rs. 20)";
+      total += 20;
+    }
+
+    const message = `Assalam-o-Alaikum! I would like to order:\n${itemsText}\nTotal: Rs. ${total}\nPlease confirm my order.`;
+    const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
+  }
+
+  // Lightbox Modal
+  function openLightbox(src, caption) {
+    const modal = document.getElementById("lightboxModal");
+    const img = document.getElementById("lightboxImg");
+    const cap = document.getElementById("lightboxCaption");
+    img.src = src;
+    cap.innerText = caption;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function closeLightbox() {
+    const modal = document.getElementById("lightboxModal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+
+  // Initialize
+  document.addEventListener("DOMContentLoaded", () => {
+    renderMenu(MENU_DATA);
+    updateCartBadge();
+  });
+</script>
+</body></html>

@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-choco: #35170F;
+  --color-choco-dark: #261914;
+  --color-amber-brand: #F47721;
+  --color-cream: #FFF7E9;
+  --color-cream-card: #FFFBF2;
+  --color-cream-border: #EEDDC5;
+  --color-pistachio: #238A55;
+  --color-honey: #F5B832;
+
+  --font-headline: "Playfair Display", Georgia, serif;
+  --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-choco-dark);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Explicit Product Image Aspect Ratio & Fit */
+.product-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  background: #FFF7E9;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(53, 23, 15, 0.06), 0 2px 6px -1px rgba(53, 23, 15, 0.04);
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 14px 34px -4px rgba(53, 23, 15, 0.14), 0 4px 12px -2px rgba(53, 23, 15, 0.06);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

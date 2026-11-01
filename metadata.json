@@ -1,0 +1,6 @@
+{
+  "name": "SSS Ice Cream & Snacks",
+  "description": "Artisanal confectionery and parlour featuring freshly churned ice cream, 14 refreshing slush flavours, crispy Belgian waffles, cold coffee floats, and thick shakes with WhatsApp ordering and GitHub publishing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
